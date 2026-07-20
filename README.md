@@ -44,7 +44,7 @@ You do not need this repo to start. Pick one workflow where AI is already involv
 4. Mark where a model is working, or is planned to.
 5. For every U, decide: does this stay with a human, or does it go behind a form with a check after it?
 
-You have just priced your first workflow. The longer form of this exercise, with reasoning tiers and a worked underwriting example, is in the practitioner companion piece, *AI Governance: You Can't Govern What You Can't See* ([Legitimacy Under Acceleration, Issue 3](https://www.linkedin.com/in/kfkchau/)).
+You have just priced your first workflow. The longer form of this exercise, with reasoning tiers and a worked underwriting example, lives with the Task Boundary Framework under the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard), where this architecture's siblings (PWC, CGL, TBF) are published.
 
 ## The four alignment classes
 
@@ -139,6 +139,6 @@ Open an issue. A framework that derives its rivals should survive contact with t
 
 ---
 
-**Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline ([3d-auto](https://github.com/kfkchau/3d-auto), public), a governance-language engine, an autonomous 33-seat organisation, a city-scale relation model. The S/U Architecture is the process-economics layer of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) research programme, grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). [AWIG OS](https://github.com/kfkchau/awig-os) is the operating system where the same laws run at system level.
+**Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline ([3d-auto](https://github.com/kfkchau/3d-auto), public, 28 logged build steps), a governance-language engine, an autonomous 33-seat organisation (530/530 tests green), a city-scale relation model (over 200,000 relations under a dozen frames). The S/U Architecture is the process-economics layer of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) research programme, grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). [AWIG OS](https://github.com/kfkchau/awig-os) is the operating system where the same laws run at system level.
 
 **License.** Documentation CC BY 4.0. Example code MIT.
