@@ -117,7 +117,7 @@ Each law was paid for at least once. Three of the failures that taught them: a t
 
 You are not asked to believe case studies. The claim is stronger and testable:
 
-**A competent AI assistant can rebuild this architecture in your domain from the guide alone.** The guide, the rebuild checklist, and a worked accounts-payable example land in this repo next: built end-to-end on mock transports, no API keys, no credentials, every state a view over events, replay-to-identity at every step. The heavyweight reference implementation is public today: [3d-auto](https://github.com/kfkchau/3d-auto), a prompt-to-3D pipeline with 28 logged build steps on these laws.
+**A competent AI assistant can rebuild this architecture in your domain from the guide alone.** The guide, the rebuild checklist, and worked examples land in this repo next: built end-to-end on mock transports, no API keys, no credentials, every state computed from the record, replay-to-identity at every step. The flagship home of these laws is [AWIG OS](https://github.com/kfkchau/awig-os), an open operating system built on the same governance root.
 
 ## What this is not
 
