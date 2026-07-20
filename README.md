@@ -40,12 +40,14 @@ The four cells type *information*. A task carries two of them: what comes in and
 
 | in \ out | S | S{u} | U{s} | U |
 |---|---|---|---|---|
-| **S** | **System** (calculation) | **System** if the free text is carried, not authored; **AI** if authored | **System** (slot-filling a form) | **AI** (writing from data) |
+| **S** | **System** (calculation) | **System** if the free text is carried, not authored; **AI** if authored | **System** (slot-filling a form) | **System** if assembled from preset wording ("I have {3} cats", slot resolved); **AI** if the prose is authored fresh |
 | **S{u}** | **System** on the structured parts; **AI** the moment the free text must be read | **AI** | **System** (slot-filling, quoting the text unread) | **AI** |
 | **U{s}** | **AI** | **AI** (the standard governed model call) | **AI** | **AI** |
 | **U** | **AI** | **AI** | **AI** | **AI** |
 
-Humans can work every box, and sit above the whole table steering. Mixed outputs fork by design: the structured part flows on to system steps; the judgment part flows on to a mind.
+Humans can work every box, and sit above the whole table steering. Note what "System writes a sentence" means: the wording was judgment once, at design time; the assembly is mechanical, like a mail merge. Frozen judgment, reused.
+
+Hybrid outputs feed more than one downstream flow; the chain is not linear. An S{u} envelope splits: the system routes and validates the structured shell while minds read the free text. A U{s} sentence splits the other way: its marked slots are machine-identifiable, so the system can act on just the {s} parts, while the whole sentence, slots included, goes to the next model — a U{s} stripped of its {s} would read like a sentence with the nouns removed.
 
 ## Run it on one workflow, today
 
