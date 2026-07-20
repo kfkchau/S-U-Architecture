@@ -5,7 +5,7 @@ Most AI agents fail in production. Not because the models are weak, but because 
 
 This is the architecture for the alternative. It was not designed on a whiteboard. It was extracted from working systems: a prompt-to-3D pipeline, a document-analysis engine, an autonomous 33-seat organisation, a city-scale spatial model, all running on the same laws. The laws are below. So are the scars.
 
-**The one-line version:** classify every operation by whether it needs judgment, force all judgment through governed adapters, make the workflow itself data, record everything as events, compute all state, and let humans decide only the three things machines must never decide.
+**The one-line version:** classify every operation by whether it needs judgment, force all judgment through governed forms, make the workflow itself data, record every decision as an event, compute all state, and let humans decide only the three things machines must never decide.
 
 ---
 
@@ -34,6 +34,18 @@ Every model call is the adapter pair: U{s} in, S{u} out. No ad-hoc prompts exist
 
 The economics are not subtle. A deterministic operation costs its build cost once, then near zero forever. A model call costs tokens, latency, and variance every run. For anything that runs N times there is an N* beyond which code strictly dominates. Recent compiler-style research puts the break-even near N* ≈ 17. Classification is not bookkeeping. It is the pricing mechanism of your system.
 
+## Run it on one workflow, today
+
+You do not need this repo to start. Pick one workflow where AI is already involved or about to be: claims triage, credit decisioning, customer onboarding. In a 30-minute session with the people who actually do the work:
+
+1. Map the workflow as it really happens, step by step.
+2. Break it into atomic tasks: one actor, required input, one transformation, required output.
+3. Put every task in a cell: S, U, U{s}, or S{u}.
+4. Mark where a model is working, or is planned to.
+5. For every U, decide: does this stay with a human, or does it go behind a form with a check after it?
+
+You have just priced your first workflow. The longer form of this exercise, with reasoning tiers and a worked underwriting example, is in the practitioner companion piece, *AI Governance: You Can't Govern What You Can't See* ([Legitimacy Under Acceleration, Issue 3](https://www.linkedin.com/in/kfkchau/)).
+
 ## The four alignment classes
 
 How do you know an S operation is actually S? Every operation also gets a verification class:
@@ -49,23 +61,27 @@ The current fashion is agentic step-choosing: the model decides what to do next 
 
 **If a workflow is stable enough to succeed twice, it is stable enough to be data.** The whole pipeline is one file of typed steps with routing edges. A dumb runner of about a hundred lines walks it. Stations are typed: `s_module` runs code, `u_template` runs an adapter pair, `gate` asks a human. Stations are transport-independent: the same station runs against a live API, a deterministic mock, or a file handoff, validated identically. **The entire machine runs with zero credentials.** The model is an accelerator, never a dependency.
 
-## Events only; state is computed
+## Every AI touch is a decision, and every decision is recorded
 
-No stored statuses. Anywhere. Ever. Events are appended; every "current state" is a computed view; caches are pure accelerations, discardable without loss. The standing integrity test: **delete every derived artifact, replay the record, diff = ∅.**
+Tomorrow morning your board, regulator, or major client asks one question: where, exactly, does AI make decisions in this workflow, and which parts can you explain if something goes wrong?
 
-This is what makes the audit questions mechanical instead of aspirational. Who authorized this? What did the system know? Why did it refuse? Each is answered by replaying the record, forever. A denial cites the rule that refused. Calibration values carry who set them, from what evidence, when.
+Most organisations cannot answer, because AI lives in their systems as a blob. "The AI layer handles triage." "The model scores the application." The blob is too coarse to explain anything. The unit that can be explained is the atomic task: one actor, required input, one transformation, required output. That is one decision, whether or not anyone labels it that way.
 
-## Three human gates, never automated, never compressed
+In this architecture the question answers itself, because the system records every decision as it happens and computes everything "current" from the record. No stored statuses, anywhere. The standing integrity test: delete every derived artifact, replay the record, and the reconstruction is identical, diff = ∅. Who authorized this? What did the system see? Why was this refused? Each is answered by replay, at any later date. A denial cites the rule that refused it. Calibration values carry who set them, from what evidence, when.
 
-1. **Definition**: what are we making? Ruled before the machine runs.
-2. **Calibration**: is this threshold, vocabulary, or budget right? Ruled from evidence, with a named owner.
-3. **Acceptance**: is the deliverable right? Runs end by raising the acceptance item, never by accepting.
+## What this means for AI: bounded system, AI in forms, human on top
 
-Everything between the gates is machine-driven. This boundary is not a compromise with current model quality. It is derived: most governance knowledge is unstructured, automation operates only on the structured portion, and the gap between them is where every ungated autonomous system eventually fails. The frontier's own results agree: agents given real autonomy over their pipelines reward-hack. A gate is not a speed bump. It is the interface to the judgment your predicates cannot express.
+Three moves, one picture.
 
-## Leftward compression, and where to stop
+**Power is data.** What an AI may do is defined as structured data: permissions, budgets, and capabilities are records the system reads, never hopes the team holds. Power that is data is bounded, amendable, and auditable by construction.
 
-Over time, operations migrate left:
+**AI never works on a blank page.** Every model call is a prebuilt form: a versioned template with typed slots going in, a validated envelope coming out. The form defines exactly what the model can affect. Fill the form; never hand over the pen.
+
+**The human sits on top.** Three decisions never go to the machine: what are we making (definition), where do the thresholds sit (calibration), is the result accepted (acceptance). In reasoning-tier terms: pattern-level WHAT work runs as code, method-level HOW work runs inside forms, and the WHY tier stays human. This boundary is not caution about today's models. Most of the knowledge that governs real organisations is unstructured; automation operates only on the structured portion; the gap between the two is where every ungated autonomous system eventually fails. The frontier's own results agree: agents given real autonomy over their own pipelines reward-hack.
+
+## The system gets cheaper over time
+
+Judgments made once get frozen into data and code, so the system needs the model less each month:
 
 ```
 pure U  ──►  S{u}  ──►  U{s}  ──►  S
@@ -73,11 +89,9 @@ judgment     freeze      template    eliminate
 by a mind    as data     + govern    the call
 ```
 
-Measure it: **hardness** = the fraction of a plan's fields that are hard references instead of free text. Gate expensive operations (render, send, publish, pay) on hardness = 1.0.
+Measure the progress with one number. **Hardness** is the fraction of a plan's fields that are hard references instead of free text. Expensive actions (render, send, publish, pay) wait for hardness = 1.0. And know where compression stops: the three human decisions stay human by design, forever.
 
-And know where compression stops: the three gates stay human by design, forever.
-
-**On compiling workflows into model weights** (the current research frontier): fine-tuning your workflow into a small model is admissible **as cache, never as law**. A compiled model is a derived acceleration that cites the chain version it was compiled from: regenerable, disposable, never authoritative. Weights that *are* the workflow are law welded into an unauditable substrate, the oldest failure of governed systems in new clothes.
+One position on the current research fashion: fine-tuning your workflow into a small model's weights is admissible **as cache, never as law**. A compiled model is a disposable speed-up copy that cites the workflow version it was compiled from. The master copy stays readable data. Weights that *are* the workflow are law welded into an unauditable substrate, the oldest failure of governed systems in new clothes.
 
 ## The fifteen laws (short form)
 
@@ -97,19 +111,19 @@ And know where compression stops: the three gates stay human by design, forever.
 14. Local optimization is guarded by a global measure.
 15. Proof lands in the human's channel.
 
-Each law was paid for at least once. The scar register records the failure that taught it: the silent-fallback lookup that built the wrong anatomy, the verify-only system that could fail things but never fix them, the "suite PASS" logged before the suite ran. The scars are published because they are the evidence the laws are real.
+Each law was paid for at least once. Three of the failures that taught them: a text-cleanup helper silently stripped one letter from a part name, so the pipeline built the wrong anatomy and nothing failed loudly enough to notice (no silent defaults, ever); a checker was built that could reject bad work but had no machinery to construct good work (Law 11); and "suite PASS" was once written into the log before the suite actually ran (evidence precedes claims). The full register ships with the guide.
 
 ## Prove it yourself
 
 You are not asked to believe case studies. The claim is stronger and testable:
 
-**A competent AI assistant can rebuild this architecture in your domain from the guide alone.** The method section is the rebuild checklist. The worked example is an accounts-payable pipeline built end-to-end on mock transports: no API keys, no credentials, every state a view over events, replay-to-identity at every step. Clone it, wipe its caches, replay, and diff.
+**A competent AI assistant can rebuild this architecture in your domain from the guide alone.** The guide, the rebuild checklist, and a worked accounts-payable example land in this repo next: built end-to-end on mock transports, no API keys, no credentials, every state a view over events, replay-to-identity at every step. The heavyweight reference implementation is public today: [3d-auto](https://github.com/kfkchau/3d-auto), a prompt-to-3D pipeline with 28 logged build steps on these laws.
 
 ## What this is not
 
-- **Not an agent framework.** It is the discipline for deciding where agents belong, usually in fewer places than you think, always behind an adapter.
+- **Not an agent framework.** It is the discipline for deciding where agents belong, usually in fewer places than you think, always behind a form.
 - **Not "just event sourcing."** Event sourcing is Law 1. There are fourteen more, and the pricing layer (the cells) is the part event sourcing never had.
-- **Not "just 12-factor agents."** The agreement is real: own your control flow, human contact as structured input. This goes further: the workflow is data, judgment is priced per operation, calibration is governed by events, and the gate taxonomy is closed and derived, not a checklist.
+- **Not "just 12-factor agents."** The agreement is real: own your control flow, human contact as structured input. This goes further: the workflow is data, judgment is priced per operation, calibration is governed by events, and the human boundary is closed and derived, not a checklist.
 - **Not anti-model.** It is pro-model in the only way that compounds: your model's judgments get validated, frozen, and reused forever instead of re-spent every run.
 
 ## Falsify it
@@ -119,12 +133,12 @@ The architecture rests on claims you can attack:
 - Find a production operation that fits none of the four cells.
 - Find a rule that is not prescriptive information.
 - Find a stable workflow where runtime step-choosing beats the chain-as-data on cost, reliability, and auditability together.
-- Find a case where compressing a human gate durably improved a governed outcome.
+- Find a case where removing the human from definition, calibration, or acceptance durably improved a governed outcome.
 
 Open an issue. A framework that derives its rivals should survive contact with them, and the register of dead readings stays public.
 
 ---
 
-**Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline (public reference implementation), a governance-language engine, an autonomous 33-seat organisation, a city-scale relation model. Grounded in an open ontology of information and governance (SCOT / OGS, CC BY 4.0).
+**Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline ([3d-auto](https://github.com/kfkchau/3d-auto), public), a governance-language engine, an autonomous 33-seat organisation, a city-scale relation model. The S/U Architecture is the process-economics layer of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) research programme, grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). [AWIG OS](https://github.com/kfkchau/awig-os) is the operating system where the same laws run at system level.
 
 **License.** Documentation CC BY 4.0. Example code MIT.
