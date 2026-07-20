@@ -141,4 +141,6 @@ Open an issue. A framework that derives its rivals should survive contact with t
 
 **Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline ([3d-auto](https://github.com/kfkchau/3d-auto), public, 28 logged build steps), a governance-language engine, an autonomous 33-seat organisation (530/530 tests green), a city-scale relation model (over 200,000 relations under a dozen frames). The S/U Architecture is the process-economics layer of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) research programme, grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). [AWIG OS](https://github.com/kfkchau/awig-os) is the operating system where the same laws run at system level.
 
+**Contact.** Questions and challenges: open an issue or a discussion here. Private approaches: kfkchau@gmail.com.
+
 **License.** Documentation CC BY 4.0. Example code MIT.
