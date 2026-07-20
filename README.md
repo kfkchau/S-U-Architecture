@@ -34,6 +34,19 @@ Every model call is the adapter pair: U{s} in, S{u} out. No ad-hoc prompts exist
 
 The economics are not subtle. A deterministic operation costs its build cost once, then near zero forever. A model call costs tokens, latency, and variance every run. For anything that runs N times there is an N* beyond which code strictly dominates. Recent compiler-style research puts the break-even near N* ≈ 17. Classification is not bookkeeping. It is the pricing mechanism of your system.
 
+## Input and output are typed separately
+
+The four cells type *information*. A task carries two of them: what comes in and what goes out. The executor follows from the pair, under one rule: **any unstructured content that must actually be understood, on either side, makes the task judgment work.** Unstructured in, structured out is still an AI task, because the reading is the judgment. A system can *carry* unstructured content without understanding it (a database storing a sentence as text), but never interpret it.
+
+| in \ out | S | S{u} | U{s} | U |
+|---|---|---|---|---|
+| **S** | **System** (calculation) | **System** if the free text is carried, not authored; **AI** if authored | **System** (slot-filling a form) | **AI** (writing from data) |
+| **S{u}** | **System** on the structured parts; **AI** the moment the free text must be read | **AI** | **System** (slot-filling, quoting the text unread) | **AI** |
+| **U{s}** | **AI** | **AI** (the standard governed model call) | **AI** | **AI** |
+| **U** | **AI** | **AI** | **AI** | **AI** |
+
+Humans can work every box, and sit above the whole table steering. Mixed outputs fork by design: the structured part flows on to system steps; the judgment part flows on to a mind.
+
 ## Run it on one workflow, today
 
 You do not need this repo to start. Pick one workflow where AI is already involved or about to be: claims triage, credit decisioning, customer onboarding. In a 30-minute session with the people who actually do the work:
