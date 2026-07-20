@@ -89,7 +89,7 @@ judgment     freeze      template    eliminate
 by a mind    as data     + govern    the call
 ```
 
-Measure the progress with one number. **Hardness** is the fraction of a plan's fields that are hard references instead of free text. Expensive actions (render, send, publish, pay) wait for hardness = 1.0. And know where compression stops: the three human decisions stay human by design, forever.
+Measure the progress with one number. **Hardness** is the fraction of a plan's fields that are hard references instead of free text. Expensive actions (render, send, publish, pay) wait for hardness = 1.0. And know where compression stops: the three human decisions stay human by design, forever. This is not sentiment. Unstructured form is the closest carrier of original meaning; forcing real judgment into a schema does not simplify it, it deletes part of it. Over-compression is over-engineering human meaning into black and white.
 
 One position on the current research fashion: fine-tuning your workflow into a small model's weights is admissible **as cache, never as law**. A compiled model is a disposable speed-up copy that cites the workflow version it was compiled from. The master copy stays readable data. Weights that *are* the workflow are law welded into an unauditable substrate, the oldest failure of governed systems in new clothes.
 
@@ -139,7 +139,7 @@ Open an issue. A framework that derives its rivals should survive contact with t
 
 ---
 
-**Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline ([3d-auto](https://github.com/kfkchau/3d-auto), public, 28 logged build steps), a governance-language engine, an autonomous 33-seat organisation (530/530 tests green), a city-scale relation model (over 200,000 relations under a dozen frames). The S/U Architecture is the process-economics layer of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) research programme, grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). [AWIG OS](https://github.com/kfkchau/awig-os) is the operating system where the same laws run at system level.
+**Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline (28 logged build steps), a governance-language engine, an autonomous 33-seat organisation (530/530 tests green), a city-scale relation model (over 200,000 relations under a dozen frames). The S/U Architecture is the process-economics layer of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) research programme, grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). The flagship implementation is [AWIG OS](https://github.com/kfkchau/awig-os), the open operating system where the same laws run at system level.
 
 **Contact.** Questions and challenges: open an issue or a discussion here. A contact email will be added.
 
