@@ -11,13 +11,13 @@ This is the architecture for the alternative. It was not designed on a whiteboar
 
 ## The root idea: information has a grain
 
-All information sits on a gradient from **unstructured** (language, judgment, taste) to **structured** (data, code, predicates). This is not a file-format detail. It is the load-bearing property of the AI era, because the automation gradient maps onto it exactly:
+All information sits on a gradient from **unstructured** (language, judgment, taste) to **structured** (data, code, predicates). This is not a file-format detail. It is the load-bearing property of the AI era, because the workers sit on it differently:
 
-- Rules automate through human language: unstructured.
-- Code automates through formal logic: structured.
-- AI automates through learned patterns: the middle.
+- **Humans master both ends.** We always have.
+- **Systems** (conventional software) hold the structured end only.
+- **AI is the first automation of the unstructured end**: the work that used to be human-only.
 
-They are the same function at different points on the gradient. Once you see this, "what should the AI do?" stops being a philosophy question and becomes an engineering classification with a price attached.
+When AI appears to do structured work, look closely: its process is unstructured all the way, and where real structure is needed it writes the piece of code that does the structured part. The code is structured; the process that produced it never was. Once you see this, "what should the AI do?" stops being a philosophy question and becomes an engineering classification with a price attached.
 
 ## The four cells
 
