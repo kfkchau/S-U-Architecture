@@ -110,6 +110,8 @@ judgment     freeze      template    eliminate
 by a mind    as data     + govern    the call
 ```
 
+The arrow is a direction, not a mandatory sequence. Some work structures envelope-first, as drawn. Other work structures markup-first: you notice the structured bits inside the sentences, mark them, and then discover the whole thing can be structured, skipping stages entirely. Any hop toward S that the meaning honestly allows is the same move.
+
 Measure the progress with one number. **Hardness** is the fraction of a plan's fields that are hard references instead of free text. Expensive actions (render, send, publish, pay) wait for hardness = 1.0. And know where compression stops: the three human decisions stay human by design, forever. This is not sentiment. Unstructured form is the closest carrier of original meaning; forcing real judgment into a schema does not simplify it, it deletes part of it. Over-compression is over-engineering human meaning into black and white.
 
 One position on the current research fashion: fine-tuning your workflow into a small model's weights is admissible **as cache, never as law**. A compiled model is a disposable speed-up copy that cites the workflow version it was compiled from. The master copy stays readable data. Weights that *are* the workflow are law welded into an unauditable substrate, the oldest failure of governed systems in new clothes.
