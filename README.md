@@ -59,11 +59,11 @@ You do not need this repo to start. Pick one workflow where AI is already involv
 
 1. Map the workflow as it really happens, step by step.
 2. Break it into atomic tasks: one actor, required input, one transformation, required output.
-3. Put every task in a cell: S, U, U{s}, or S{u}.
+3. Type each task's input and its output: S, U, U{s}, or S{u}.
 4. Mark where a model is working, or is planned to.
 5. For every U, decide: does this stay with a human, or does it go behind a form with a check after it?
 
-You have just priced your first workflow. The longer form of this exercise, with reasoning tiers and a worked underwriting example, lives with the Task Boundary Framework under the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard), where this architecture's siblings (PWC, CGL, TBF) are published.
+You have just priced your first workflow. The longer form of this exercise, with reasoning tiers and a worked underwriting example, is the Task Boundary Framework ([published here](https://github.com/kfkchau/Open-Governance-Standard)).
 
 ## The four alignment classes
 
