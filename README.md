@@ -36,18 +36,20 @@ The economics are not subtle. A deterministic operation costs its build cost onc
 
 ## Input and output are typed separately
 
-The four cells type *information*. A task carries two of them: what comes in and what goes out. The executor follows from the pair, under one rule: **any unstructured content that must actually be understood, on either side, makes the task judgment work.** Unstructured in, structured out is still an AI task, because the reading is the judgment. A system can *carry* unstructured content without understanding it (a database storing a sentence as text), but never interpret it.
+The four cells type *information*. A task carries two of them: what comes in and what goes out. Three rules decide the executor, and the matrix follows from them:
+
+- **Carry.** A system may store, move, or quote unstructured content without reading it. Understanding is judgment; carrying is not.
+- **Assembly.** A system may produce prose only by joining preset wording with calculated values ("I have {3} cats" resolving to "I have 3 cats"). The wording was judgment once, at design time; the assembly is a mail merge. Fresh wording is authored judgment: a mind.
+- **One box, one atom.** Each box is a single transformation by a single actor. "The AI writes it and the system files it" is two boxes, chained. And hybrid outputs feed several consumers at once: marked slots are machine-identifiable, so systems act on just the {s} parts, while the whole sentence, slots included, goes to the next model. A U{s} stripped of its {s} would read like a sentence with the nouns removed.
 
 | in \ out | S | S{u} | U{s} | U |
 |---|---|---|---|---|
-| **S** | **System** (calculation) | **System** if the free text is carried, not authored; **AI** if authored | **System** (slot-filling a form) | **System** if assembled from preset wording ("I have {3} cats", slot resolved); **AI** if the prose is authored fresh |
-| **S{u}** | **System** on the structured parts; **AI** the moment the free text must be read | **AI** | **System** (slot-filling, quoting the text unread) | **AI** |
-| **U{s}** | **AI** | **AI** (the standard governed model call) | **AI** | **AI** |
-| **U** | **AI** | **AI** | **AI** | **AI** |
+| **S** | **System**: calculation | **System**: envelope assembly, free text carried as a value (authored text arrives from a prior AI atom) | **System**: template slot-filling, markers kept | **System** by assembly, markers resolved; **AI** when analytical wording must be created from the data |
+| **S{u}** | **System** on the structured fields, {u} carried; the {u} forks to **AI** the moment it must be read | **System**: repackaging, {u} carried | **System**: slot-filling from envelope values | **AI**: writing that requires reading the {u} |
+| **U{s}** | **System**: harvesting the marked slot values; **AI** when meaning must come from the prose itself | **AI**: the governed model call, the architecture's designed path | **System**: further slot-filling; **AI** when the prose must be read or rewritten | **AI** |
+| **U** | **AI**: the reading is the judgment | **AI** | **AI** | **Minds**: the model's native mode. Inside a pipeline, raw U to U is the banned ad-hoc call; governed work enters as U{s} and exits as S{u} |
 
-Humans can work every box, and sit above the whole table steering. Note what "System writes a sentence" means: the wording was judgment once, at design time; the assembly is mechanical, like a mail merge. Frozen judgment, reused.
-
-Hybrid outputs feed more than one downstream flow; the chain is not linear. An S{u} envelope splits: the system routes and validates the structured shell while minds read the free text. A U{s} sentence splits the other way: its marked slots are machine-identifiable, so the system can act on just the {s} parts, while the whole sentence, slots included, goes to the next model — a U{s} stripped of its {s} would read like a sentence with the nouns removed.
+Humans can work every box, and sit above the whole table steering.
 
 ## Run it on one workflow, today
 
