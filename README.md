@@ -21,7 +21,7 @@ When AI appears to do structured work, look closely: its process is unstructured
 
 ## The four cells
 
-Classify every operation in your pipeline into exactly one cell:
+Classify every piece of information moving through your pipeline into exactly one cell (tasks come next; a task is typed by its input and its output):
 
 | Cell | Carrier | Content | Meaning |
 |---|---|---|---|
@@ -29,6 +29,8 @@ Classify every operation in your pipeline into exactly one cell:
 | **U** | language | judgment | Pure unstructured. A model or a human mind judges. |
 | **U{s}** | prose | structured slots | The S-to-U adapter: a versioned prose template with typed slots, filled by code, consumed by a model. |
 | **S{u}** | schema | free text | The U-to-S adapter: a validated envelope emitted by the model, routed by code. |
+
+Purity is strict: pure U means one single undifferentiated body of language. The moment unstructured content arrives in named fields, structure exists around it, and that is S{u}: three text fields are an envelope, not prose.
 
 Every model call is the adapter pair: U{s} in, S{u} out. No ad-hoc prompts exist in the system. **Governed judgment is the product; ungoverned judgment is the failure mode.**
 
@@ -158,6 +160,6 @@ Open an issue. A framework that derives its rivals should survive contact with t
 
 **Provenance.** Distilled 2025-2026 from a working estate: a prompt-to-3D pipeline (28 logged build steps), a governance-language engine, an autonomous 33-seat organisation (530/530 tests green), a city-scale relation model (over 200,000 relations under a dozen frames). The S/U Architecture is part of the [Open Governance Standard](https://github.com/kfkchau/Open-Governance-Standard) (OGS) research programme ([overview deck](https://github.com/kfkchau/Open-Governance-Standard/blob/main/pitch-deck.pdf)), and it is the direct operational extension of the **Task Boundary Framework** (TBF, research begun 2016): TBF makes human and AI work visible at the atomic-task level and decides where each boundary sits; the S/U Architecture is how systems are built so those boundaries actually run, governed. The wider stack: the **Open Meta-Governance Standard** (OMGS) governs how rules change; the **Common Governance Language** (CGL) gives a shared grammar for governed reality; the **Project White Collar** framework (PWC) structures governed AI execution. All grounded in an open ontology of information and governance ([SCOT](https://github.com/kfkchau/SCOT), CC BY 4.0). The flagship implementation is [AWIG OS](https://github.com/kfkchau/awig-os), the open operating system (GPLv3) that applies the S/U laws at system level and will carry the other OGS elements, OMGS, CGL, and PWC, as it grows.
 
-**Contact.** Questions and challenges: open an issue or a discussion here. A contact email will be added.
+**Contact.** Questions and challenges: open an issue or a discussion here. Private approaches: kelvin@rootrebuilder.org.
 
 **License.** Documentation CC BY 4.0. Example code MIT.
