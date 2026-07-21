@@ -80,13 +80,15 @@ The current fashion is agentic step-choosing: the model decides what to do next 
 
 **If a workflow is stable enough to succeed twice, it is stable enough to be data.** The whole pipeline is one file of typed steps with routing edges. A dumb runner of about a hundred lines walks it. Stations are typed: `s_module` runs code, `u_template` runs an adapter pair, `gate` asks a human. Stations are transport-independent: the same station runs against a live API, a deterministic mock, or a file handoff, validated identically. **The entire machine runs with zero credentials.** The model is an accelerator, never a dependency.
 
+The deeper problem the chain fixes is the refusal to plan. Teams trust a magic box because nobody wants to see the whole pipeline of steps or understand the information architecture underneath; they just want things to happen. But the order of transformation is itself structured information, and it composes: when X fires, run these three steps; when Y fires, run that workflow template, with loops and choices inside. Even an agent's "what do I do next" can be structured: the next move is a choice among registered workflow templates with slots to fill, a dropdown, not a blank page. An agent can even author new workflows, because workflows are templates, and a new template enters the library the governed way before anything runs it.
+
 ## Every AI touch is a decision, and every decision is recorded
 
 Tomorrow morning your board, regulator, or major client asks one question: where, exactly, does AI make decisions in this workflow, and which parts can you explain if something goes wrong?
 
 Most organisations cannot answer, because AI lives in their systems as a blob. "The AI layer handles triage." "The model scores the application." The blob is too coarse to explain anything. The unit that can be explained is the atomic task: one actor, required input, one transformation, required output. That is one decision, whether or not anyone labels it that way.
 
-In this architecture the question answers itself, because the system records every decision as it happens and computes everything "current" from the record. No stored statuses, anywhere. The standing integrity test: delete every derived artifact, replay the record, and the reconstruction is identical, diff = ∅. Who authorized this? What did the system see? Why was this refused? Each is answered by replay, at any later date. A denial cites the rule that refused it. Calibration values carry who set them, from what evidence, when.
+To be precise: system steps are decisions too, made once at design time and replayed mechanically; the AI's decisions are made live, which is what makes them the governance concern. In this architecture the question answers itself, because the system records both kinds of decision as they happen and computes everything "current" from the record. No stored statuses, anywhere. The standing integrity test: delete every derived artifact, replay the record, and the reconstruction is identical, diff = ∅. Who authorized this? What did the system see? Why was this refused? Each is answered by replay, at any later date. A denial cites the rule that refused it. Calibration values carry who set them, from what evidence, when.
 
 ## What this means for AI: bounded system, AI in forms, human on top
 
