@@ -74,6 +74,8 @@ How do you know an S operation is actually S? Every operation also gets a verifi
 - **band**: an executable measurement against a chosen threshold. **Store the score, never the verdict.** Verdicts are computed at read time against current calibration, so moving a threshold re-judges everything without re-measuring anything.
 - **sample**: no executable spec. A model or human judges. This is the U that remains, and it is either frozen after passing its gate or guarded by a downstream predicate.
 
+The classes are not fixed kinds. They are bands on a continuum of how developed the "what counts as correct" knowledge is, and work migrates along it. Judgment guided by criteria so mature that every competent judge lands on the same outcome has, in effect, an executable spec: it has earned reclassification. The honest measure underneath is agreement: same artifact, several independent judges, how often the verdicts coincide. That migration is the signal the whole compression lifecycle watches for.
+
 ## The chain is data
 
 The current fashion is agentic step-choosing: the model decides what to do next at runtime. For stable workflows this is definitional waste, judgment spent on a solved problem, and it destroys reproducibility (same input, different path) and auditability (no fixed thing to audit).
